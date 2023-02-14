@@ -1,0 +1,7 @@
+Package: siakhooi-devutils-date-formats
+Version: 1.0.0
+Maintainer: Siak Hooi <siakhooi@gmail.com>
+Depends: coreutils, bash
+Architecture: amd64
+Homepage: <https://github.com/siakhooi/bash-devutils-date-formats>
+Description: Several commands to print date with predefined formats.

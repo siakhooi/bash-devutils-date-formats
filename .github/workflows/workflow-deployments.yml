@@ -1,0 +1,18 @@
+name: Deployment
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-with-shellcheck.yml
+  jfrog:
+    needs: build
+    uses: ./.github/workflows/publish-to-jfrog.yml
+    secrets:
+      JFROG_TOKEN: ${{ secrets.JFROG_TOKEN }}
+  siakhooi-apt:
+    needs: build
+    uses: ./.github/workflows/publish-to-siakhooi-apt.yml
+    secrets:
+      PUBLIC_TO_APT_GITHUB_TOKEN: ${{ secrets.PUBLIC_TO_APT_GITHUB_TOKEN }}

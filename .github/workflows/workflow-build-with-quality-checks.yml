@@ -1,0 +1,9 @@
+name: Build with Quality Check
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  test:
+    uses: ./.github/workflows/build-with-shellcheck.yml

@@ -1,0 +1,21 @@
+name: Publish to siakhooi.github.io/apt
+
+on:
+  workflow_call:
+    secrets:
+      PUBLIC_TO_APT_GITHUB_TOKEN:
+        required: true
+
+jobs:
+  publish_jfrog:
+    name: publish to jfrog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: debfile
+          path: ./
+      - run: ./.github/bin/deploy-to-siakhooi-apt.sh
+        env:
+          PUBLIC_TO_APT_GITHUB_TOKEN: ${{ secrets.PUBLIC_TO_APT_GITHUB_TOKEN }}

@@ -1,0 +1,21 @@
+name: Build with shellcheck
+
+on: workflow_call
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: sudo apt install shellcheck pandoc dpkg-dev
+      - run: ./build.sh
+      - uses: actions/upload-artifact@v3
+        with:
+          name: debfile
+          path: ./*.deb
+      - uses: actions/upload-artifact@v3
+        with:
+          name: target
+          path: ./target/
