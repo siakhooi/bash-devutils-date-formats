@@ -5,14 +5,18 @@ Package `siakhooi-devutils-date-formats` to provide commands to print date in pr
 ## Commands
 
 ```bash
-y2y [date arguments]  
-y2m [date arguments]  
-y2d [date arguments]  
-y2h [date arguments]  
-y2M [date arguments]  
-y2s [date arguments]
-y2n [date arguments]
+y2y [date arguments]  # year to year
+y2m [date arguments]  # year to month
+y2d [date arguments]  # year to day
+y2h [date arguments]  # year to hour
+y2M [date arguments]  # year to minute
+y2s [date arguments]  # year to second
+y2n [date arguments]  # year to nanoseconds
 ```
+
+## Sample
+
+![sample](sample.gif "Sample")
 
 ## Quick Start
 
