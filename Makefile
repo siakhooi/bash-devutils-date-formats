@@ -12,3 +12,11 @@ delete-tags:
 
 terminalizer:
 	terminalizer render docs/terminalizer-date-formats.yml
+
+docker-ubuntu-bash:
+	docker run --rm -it -w /working -v $$(pwd):/working ubuntu bash
+#	. in-container-init.sh
+
+docker-debian-bash:
+	docker run --rm -it -w /working -v $$(pwd):/working debian bash
+#	. in-container-init.sh

@@ -31,7 +31,7 @@ pandoc $SOURCE/md/siakhooi-devutils-date-formats.1.md -s -t man | gzip -9 >$TARG
   ln -s siakhooi-devutils-date-formats.1.gz y2n.1.gz
 )
 
-dpkg --build $TARGET
+dpkg-deb --build -Zxz $TARGET
 dpkg-name ${TARGET}.deb
 
 DEBFILE=$(ls ./*.deb)
