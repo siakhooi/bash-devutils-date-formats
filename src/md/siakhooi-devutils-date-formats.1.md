@@ -1,4 +1,4 @@
-% SiakHooi-DevUtils-Date-Formats(1) Siak Hooi Development Utilities 1.0.0
+% DATE-FORMATS(1) Siak Hooi DevUtils 1.0.0 | DevUtils Commands
 % Siak Hooi
 % February 2023
 
