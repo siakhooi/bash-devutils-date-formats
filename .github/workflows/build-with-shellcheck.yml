@@ -13,8 +13,10 @@ jobs:
       - run: ./build.sh
       - uses: actions/upload-artifact@v3
         with:
-          name: debfile
-          path: ./*.deb
+          name: deliverables
+          path: |
+            ./*.deb
+            ./*.deb.*sum
       - uses: actions/upload-artifact@v3
         with:
           name: target

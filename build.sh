@@ -14,6 +14,7 @@ cp -vr $SOURCE/DEBIAN $TARGET
 # Binary File
 mkdir -p $TARGET/usr/bin
 cp -vr $SOURCE/bin $TARGET/usr
+chmod 755 $TARGET/usr/bin/*
 
 # Man Pages
 mkdir -p $TARGET/usr/share/man/man1/
@@ -31,8 +32,12 @@ pandoc $SOURCE/md/siakhooi-devutils-date-formats.1.md -s -t man | gzip -9 >$TARG
   ln -s siakhooi-devutils-date-formats.1.gz y2n.1.gz
 )
 
-dpkg-deb --build -Zxz $TARGET
+fakeroot dpkg-deb --build -Zxz $TARGET
 dpkg-name ${TARGET}.deb
 
 DEBFILE=$(ls ./*.deb)
+
+sha256sum "$DEBFILE" >$DEBFILE.sha256sum
+sha512sum "$DEBFILE" >$DEBFILE.sha512sum
+
 dpkg --contents "$DEBFILE"

@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
         with:
-          name: debfile
+          name: deliverables
           path: ./
       - run: ./.github/bin/deploy-to-siakhooi-apt.sh
         env:
