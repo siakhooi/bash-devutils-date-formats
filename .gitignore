@@ -1,2 +1,4 @@
 target
 *.deb
+*.deb.sha256sum
+*.deb.sha512sum
