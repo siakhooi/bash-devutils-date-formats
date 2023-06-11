@@ -57,4 +57,4 @@ $ sudo apt install siakhooi-devutils-date-formats
 
 [![Generic badge](https://img.shields.io/badge/Funding-BuyMeACoffee-33cb56.svg)](https://www.buymeacoffee.com/siakhooi)
 [![Generic badge](https://img.shields.io/badge/Funding-Ko%20Fi-33cb56.svg)](https://ko-fi.com/siakhooi)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=siakhooi.bash-devutils-date-formats&left_color=grey&right_color=#33cb56)
+![visitors](https://hit-tztugwlsja-uc.a.run.app/?outputtype=badge&counter=ghmd-bash-date-formats)
