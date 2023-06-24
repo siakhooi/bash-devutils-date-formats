@@ -31,7 +31,6 @@ $ sudo apt install siakhooi-devutils-date-formats
 ## Deployments
 
 - <https://siakhooi.github.io/apt/>
-- <https://siakhooi.jfrog.io/ui/packages>
 
 ## Badges
 
