@@ -6,7 +6,7 @@ shellcheck src/bin/*
 TARGET=target
 SOURCE=src
 
-mkdir "$TARGET"
+mkdir -p "$TARGET"
 
 # Control File
 cp -vr $SOURCE/DEBIAN $TARGET
@@ -37,7 +37,7 @@ dpkg-name ${TARGET}.deb
 
 DEBFILE=$(ls ./*.deb)
 
-sha256sum "$DEBFILE" >$DEBFILE.sha256sum
-sha512sum "$DEBFILE" >$DEBFILE.sha512sum
+sha256sum "$DEBFILE" >"$DEBFILE.sha256sum"
+sha512sum "$DEBFILE" >"$DEBFILE.sha512sum"
 
 dpkg --contents "$DEBFILE"

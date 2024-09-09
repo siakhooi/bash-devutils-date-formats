@@ -1,7 +1,7 @@
 clean:
 	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
 build:
-	./build.sh
+	./scripts/build.sh
 
 test-man:
 	pandoc src/md/siakhooi-devutils-date-formats.1.md -s -t man | man -l -
