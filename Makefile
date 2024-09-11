@@ -1,5 +1,5 @@
 clean:
-	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
+	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum *.rpm
 build:
 	./scripts/build.sh
 
@@ -12,3 +12,25 @@ delete-tags:
 
 terminalizer:
 	terminalizer render docs/terminalizer-date-formats.yml
+
+rpmsetup:
+	rpmdev-setuptree
+	mkdir -p src/RPMS
+	rpmdev-newspec siakhooi-devutils-date-formats
+
+rpmlint:
+	cp src/RPMS/siakhooi-devutils-date-formats.spec ~/rpmbuild/SPECS
+	rpmlint ~/rpmbuild/SPECS/siakhooi-devutils-date-formats.spec
+
+rpmbuild:
+	rpmbuild -bb -vv ~/rpmbuild/SPECS/siakhooi-devutils-date-formats.spec
+
+buildrpm: clean
+	scripts/build-rpms.sh
+tree:
+	tree ~/rpmbuild/
+	rpm -ql ~/rpmbuild/RPMS/noarch/siakhooi-devutils-date-formats-1.0.2-1.fc40.noarch.rpm
+rpm-i:
+	rpm -i -vv ~/rpmbuild/RPMS/noarch/siakhooi-devutils-date-formats-1.0.2-1.fc40.noarch.rpm
+rpm-e:
+	rpm -e -vv siakhooi-devutils-date-formats
