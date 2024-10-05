@@ -1,8 +1,6 @@
 #!/bin/sh
 set -e
 
-shellcheck src/bin/*
-
 rm -rf ~/rpmbuild
 rpmdev-setuptree
 

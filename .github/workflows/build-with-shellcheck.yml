@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: sudo apt install shellcheck pandoc dpkg-dev
+      - run: sudo apt install pandoc dpkg-dev
       - run: ./scripts/build.sh
       - uses: actions/upload-artifact@v4
         with:

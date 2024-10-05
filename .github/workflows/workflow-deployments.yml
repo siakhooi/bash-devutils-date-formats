@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/build-with-shellcheck.yml
+    uses: ./.github/workflows/workflow-build-with-quality-checks.yml
   release-assets:
     needs: build
     uses: ./.github/workflows/deploy-github-release-assets.yml
