@@ -14,10 +14,10 @@ jobs:
       - run: ./scripts/build-rpms.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: deliverables
+          name: rpm-deliverables
           path: |
             ./*.rpm
       - uses: actions/upload-artifact@v4
         with:
-          name: rpmbuild
+          name: rpm-working-files
           path: ~/rpmbuild/
