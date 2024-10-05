@@ -1,7 +1,9 @@
 clean:
-	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum *.rpm
-build:
-	./scripts/build.sh
+	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum *.rpm ~/rpmbuild
+build-deb: clean
+	./scripts/build-deb.sh
+build-rpm: clean
+	scripts/build-rpms.sh
 
 test-man:
 	pandoc src/md/siakhooi-devutils-date-formats.1.md -s -t man | man -l -
@@ -25,8 +27,6 @@ rpmlint:
 rpmbuild:
 	rpmbuild -bb -vv ~/rpmbuild/SPECS/siakhooi-devutils-date-formats.spec
 
-buildrpm: clean
-	scripts/build-rpms.sh
 tree:
 	tree ~/rpmbuild/
 	rpm -ql ~/rpmbuild/RPMS/noarch/siakhooi-devutils-date-formats-1.0.2-1.fc40.noarch.rpm

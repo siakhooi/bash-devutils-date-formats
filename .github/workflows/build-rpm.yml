@@ -1,0 +1,23 @@
+name: Build Rpm File
+
+on: workflow_call
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: sudo dnf install -y rpmdevtools rpmlint pandoc
+      - run: ./scripts/build-rpms.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deliverables
+          path: |
+            ./*.rpm
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rpmbuild
+          path: ~/rpmbuild/

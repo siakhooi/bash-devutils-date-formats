@@ -8,6 +8,9 @@ on:
 jobs:
   shellcheck:
     uses: ./.github/workflows/shellcheck.yml
-  build:
+  build-deb:
     uses: ./.github/workflows/build-deb.yml
+    needs: shellcheck
+  build-rpm:
+    uses: ./.github/workflows/build-rpm.yml
     needs: shellcheck
