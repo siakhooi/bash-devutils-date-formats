@@ -3,7 +3,7 @@ name: Publish to siakhooi.github.io/apt
 on:
   workflow_call:
     secrets:
-      PUBLIC_TO_APT_GITHUB_TOKEN:
+      PUBLISH_TO_APT_GITHUB_TOKEN:
         required: true
 
 jobs:
@@ -18,4 +18,4 @@ jobs:
           path: ./
       - run: ./.github/bin/deploy-to-siakhooi-apt.sh
         env:
-          PUBLIC_TO_APT_GITHUB_TOKEN: ${{ secrets.PUBLIC_TO_APT_GITHUB_TOKEN }}
+          PUBLISH_TO_APT_GITHUB_TOKEN: ${{ secrets.PUBLISH_TO_APT_GITHUB_TOKEN }}

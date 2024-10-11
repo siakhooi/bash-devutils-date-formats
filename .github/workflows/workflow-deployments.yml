@@ -15,4 +15,4 @@ jobs:
     needs: build
     uses: ./.github/workflows/publish-to-siakhooi-apt.yml
     secrets:
-      PUBLIC_TO_APT_GITHUB_TOKEN: ${{ secrets.PUBLIC_TO_APT_GITHUB_TOKEN }}
+      PUBLISH_TO_APT_GITHUB_TOKEN: ${{ secrets.PUBLISH_TO_APT_GITHUB_TOKEN }}
