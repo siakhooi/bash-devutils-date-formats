@@ -1,5 +1,5 @@
 Name:           siakhooi-devutils-date-formats
-Version:        1.0.2
+Version:        1.0.3
 Release:        1%{?dist}
 Summary:        Several commands to print date with predefined formats.
 
@@ -49,6 +49,9 @@ ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2n
 %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz
 
 %changelog
+* Fri Oct 11 2024 Siak Hooi <siakhooi@gmail.com> - 1.0.3
+- dummy release
+
 * Thu May 18 2023 Siak Hooi <siakhooi@gmail.com> - 1.0.2
 - fix file owner and permissions
 

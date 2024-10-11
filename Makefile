@@ -4,6 +4,12 @@ build-deb: clean
 	./scripts/build-deb.sh
 build-rpm: clean
 	scripts/build-rpms.sh
+set-version:
+	scripts/set-version.sh
+git-commit-and-push:
+	scripts/git-commit-and-push.sh
+create-release:
+	scripts/create-release.sh
 
 test-man:
 	pandoc src/md/siakhooi-devutils-date-formats.1.md -s -t man | man -l -
