@@ -1,4 +1,4 @@
-name: Publish to siakhooi.github.io/apt
+name: Publish to siakhooi.github.io/rpms
 
 on:
   workflow_call:
@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
-          name: deb-deliverables
+          name: rpm-deliverables
           path: ./
-      - run: ./.github/bin/deploy-to-siakhooi-apt.sh
+      - run: ./.github/bin/deploy-to-siakhooi-rpms.sh
         env:
           PUBLISH_TO_GITHUB_REPO_TOKEN: ${{ secrets.PUBLISH_TO_GITHUB_REPO_TOKEN }}

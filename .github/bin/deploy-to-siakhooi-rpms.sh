@@ -7,10 +7,10 @@ DEBIAN_PACKAGE_FILE=$(basename "$PATH_TO_FILE")
 
 TMPDIR=$(mktemp -d)
 
-TARGETPATH=docs/pool/main/binary-amd64
-TARGETURL=https://${PUBLISH_TO_GITHUB_REPO_TOKEN}@github.com/siakhooi/apt.git
+TARGETPATH=docs
+TARGETURL=https://${PUBLISH_TO_GITHUB_REPO_TOKEN}@github.com/siakhooi/rpms.git
 TARGETBRANCH=main
-TARGETDIR=apt
+TARGETDIR=rpms
 TARGET_GIT_EMAIL=devutils-date-formats@siakhooi.github.io
 TARGET_GIT_USERNAME=devutils-date-formats
 TARGET_COMMIT_MESSAGE="bash-devutils-date-formats: Auto deploy [$(date)]"
