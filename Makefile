@@ -1,5 +1,5 @@
 clean:
-	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum *.rpm ~/rpmbuild
+	rm -rf target *.deb *.sha256sum *.sha512sum *.rpm ~/rpmbuild
 build-deb: clean
 	./scripts/build-deb.sh
 build-rpm: clean

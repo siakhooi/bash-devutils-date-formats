@@ -31,7 +31,7 @@ cp -vf ~/rpmbuild/RPMS/noarch/siakhooi-devutils-date-formats-*.rpm .
 tree ~/rpmbuild/
 rpm -ql ~/rpmbuild/RPMS/noarch/siakhooi-devutils-date-formats-*.rpm
 
-rpm_file=$(ls ./siakhooi-devutils-date-formats-*.rpm)
+rpm_file=$(basename "$(ls ./siakhooi-devutils-date-formats-*.rpm)")
 
 sha256sum "$rpm_file" >"$rpm_file.sha256sum"
 sha512sum "$rpm_file" >"$rpm_file.sha512sum"

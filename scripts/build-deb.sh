@@ -33,7 +33,7 @@ pandoc $SOURCE/md/siakhooi-devutils-date-formats.1.md -s -t man | gzip -9 >$TARG
 fakeroot dpkg-deb --build -Zxz $TARGET
 dpkg-name ${TARGET}.deb
 
-DEBFILE=$(ls ./*.deb)
+DEBFILE=$(basename "$(ls ./*.deb)")
 
 sha256sum "$DEBFILE" >"$DEBFILE.sha256sum"
 sha512sum "$DEBFILE" >"$DEBFILE.sha512sum"
