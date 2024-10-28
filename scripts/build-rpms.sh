@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 rm -rf ~/rpmbuild
 rpmdev-setuptree
 
-SOURCE=src
-TARGET=~/rpmbuild/BUILD/
+readonly SOURCE=src
+readonly TARGET=~/rpmbuild/BUILD/
 
 # Spec File
 cp $SOURCE/RPMS/siakhooi-devutils-date-formats.spec ~/rpmbuild/SPECS
@@ -17,7 +17,8 @@ chmod 755 $TARGET/usr/bin/*
 
 # Man Pages
 mkdir -p $TARGET/usr/share/man/man1/
-pandoc $SOURCE/md/siakhooi-devutils-date-formats.1.md -s -t man | gzip -9 >$TARGET/usr/share/man/man1/siakhooi-devutils-date-formats.1.gz
+pandoc $SOURCE/md/siakhooi-devutils-date-formats.1.md -s -t man |
+  gzip -9 >$TARGET/usr/share/man/man1/siakhooi-devutils-date-formats.1.gz
 
 # License
 cp -vf ./LICENSE "$TARGET"

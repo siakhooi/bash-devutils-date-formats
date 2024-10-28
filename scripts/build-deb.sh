@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
-TARGET=target
-SOURCE=src
+readonly TARGET=target
+readonly SOURCE=src
 
 mkdir -p "$TARGET"
 
@@ -16,7 +16,8 @@ chmod 755 $TARGET/usr/bin/*
 
 # Man Pages
 mkdir -p $TARGET/usr/share/man/man1/
-pandoc $SOURCE/md/siakhooi-devutils-date-formats.1.md -s -t man | gzip -9 >$TARGET/usr/share/man/man1/siakhooi-devutils-date-formats.1.gz
+pandoc $SOURCE/md/siakhooi-devutils-date-formats.1.md -s -t man |
+  gzip -9 >$TARGET/usr/share/man/man1/siakhooi-devutils-date-formats.1.gz
 
 ## Create links
 (
