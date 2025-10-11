@@ -1,5 +1,5 @@
 Package: siakhooi-devutils-date-formats
-Version: 1.1.0
+Version: 1.1.1
 Maintainer: Siak Hooi <siakhooi@gmail.com>
 Depends: coreutils, bash
 Architecture: amd64

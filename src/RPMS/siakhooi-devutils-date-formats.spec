@@ -1,5 +1,5 @@
 Name:           siakhooi-devutils-date-formats
-Version:        1.1.0
+Version:        1.1.1
 Release:        1%{?dist}
 Summary:        Several commands to print date with predefined formats.
 
@@ -14,10 +14,12 @@ Requires:       bash
 Several commands to print date with predefined formats, from year to nano seconds.
 
 %install
-mkdir -p %{buildroot}%{_bindir}
-mkdir -p %{buildroot}%{_mandir}/man1
-install -m 0755 usr/bin/* %{buildroot}%{_bindir}
-install -m 644 usr/share/man/man1/* %{buildroot}%{_mandir}/man1
+%{__mkdir}   -v -p %{buildroot}%{_bindir}
+%{__mkdir}   -v -p %{buildroot}%{_mandir}/man1
+%{__mkdir}   -v -p %{buildroot}/usr/share/licenses/siakhooi-devutils-date-formats
+%{__install} -v -m 0755 %{_topdir}/BUILD/usr/bin/* %{buildroot}%{_bindir}
+%{__install} -v -m 644  %{_topdir}/BUILD/usr/share/man/man1/* %{buildroot}%{_mandir}/man1
+%{__install} -v -m 644  %{_topdir}/BUILD/LICENSE %{buildroot}/usr/share/licenses/siakhooi-devutils-date-formats
 
 %post
 ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2y.1.gz

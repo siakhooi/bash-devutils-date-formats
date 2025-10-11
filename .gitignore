@@ -3,3 +3,5 @@ target
 *.deb.sha256sum
 *.deb.sha512sum
 *.rpm
+*.rpm.sha256sum
+*.rpm.sha512sum

@@ -1,15 +1,17 @@
 clean:
 	rm -rf target *.deb *.sha256sum *.sha512sum *.rpm ~/rpmbuild
-build-deb: clean
+build-deb:
 	./scripts/build-deb.sh
-build-rpm: clean
+build-rpm:
 	scripts/build-rpms.sh
 set-version:
 	scripts/set-version.sh
-git-commit-and-push:
+commit:
 	scripts/git-commit-and-push.sh
-create-release:
+release:
 	scripts/create-release.sh
+all-deb: clean set-version build-deb
+all-rpm: clean set-version build-rpm
 
 test-man:
 	pandoc src/md/siakhooi-devutils-date-formats.1.md -s -t man | man -l -
