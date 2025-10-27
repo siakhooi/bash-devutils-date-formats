@@ -11,13 +11,13 @@ jobs:
           fetch-depth: 0
       - run: sudo apt install pandoc dpkg-dev
       - run: ./scripts/build-deb.sh
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: deb-deliverables
           path: |
             ./*.deb
             ./*.deb.*sum
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: deb-working-files
           path: ./target/

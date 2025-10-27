@@ -12,13 +12,13 @@ jobs:
           fetch-depth: 0
       - run: sudo dnf install -y rpmdevtools rpmlint pandoc tree
       - run: ./scripts/build-rpms.sh
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: rpm-deliverables
           path: |
             ./*.rpm
             ./*.rpm.*sum
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: rpm-working-files
           path: ~/rpmbuild/
