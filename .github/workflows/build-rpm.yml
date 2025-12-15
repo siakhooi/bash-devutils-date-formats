@@ -14,13 +14,13 @@ jobs:
       - run: sudo dnf install -y rpmdevtools rpmlint pandoc tree
       - run: ./scripts/build-rpms.sh
 
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4  # v5.0.0
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
         with:
           name: rpm-deliverables
           path: |
             ./*.rpm
             ./*.rpm.*sum
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4  # v5.0.0
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f  # v6.0.0
         with:
           name: rpm-working-files
           path: ~/rpmbuild/
