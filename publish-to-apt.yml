@@ -1,0 +1,10 @@
+repo: siakhooi/apt
+branch: main
+git_commit_user: devutils-date-formats
+git_commit_email: devutils-date-formats@siakhooi.github.io
+git_commit_message: "devutils-date-formats: Auto deploy"
+
+files:
+  - source: siakhooi-devutils-date-formats_*_amd64.deb
+    target: docs/pool/main/binary-amd64/
+    items: 1
