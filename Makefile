@@ -6,8 +6,6 @@ build-rpm:
 	scripts/build-rpms.sh
 set-version:
 	scripts/set-version.sh
-commit:
-	scripts/git-commit-and-push.sh
 release:
 	scripts/create-release.sh
 all-deb: clean set-version build-deb
@@ -42,3 +40,7 @@ rpm-i:
 	rpm -i -vv ~/rpmbuild/RPMS/noarch/siakhooi-devutils-date-formats-1.0.2-1.fc40.noarch.rpm
 rpm-e:
 	rpm -e -vv siakhooi-devutils-date-formats
+docker-build-rpm:
+	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:rpm44 scripts/build-rpms.sh
+docker-build-deb:
+	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:deb2604 scripts/build-deb.sh
