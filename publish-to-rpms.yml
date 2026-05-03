@@ -1,10 +1,10 @@
 repo: siakhooi/rpms
 branch: main
-git_commit_user: devutils-date-formats
-git_commit_email: devutils-date-formats@siakhooi.github.io
-git_commit_message: "devutils-date-formats: Auto deploy"
+git_commit_user: date-formats
+git_commit_email: date-formats@siakhooi.github.io
+git_commit_message: "date-formats: Auto deploy"
 
 files:
-  - source: siakhooi-devutils-date-formats-*.fc*.noarch.rpm
+  - source: siakhooi-date-formats-*.fc*.noarch.rpm
     target: docs/
     items: 1

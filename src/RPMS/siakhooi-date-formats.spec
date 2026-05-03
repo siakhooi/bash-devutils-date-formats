@@ -1,10 +1,10 @@
-Name:           siakhooi-devutils-date-formats
+Name:           siakhooi-date-formats
 Version:        1.1.1
 Release:        1%{?dist}
 Summary:        Several commands to print date with predefined formats.
 
 License:        MIT
-URL:            https://github.com/siakhooi/bash-devutils-date-formats
+URL:            https://github.com/siakhooi/date-formats
 Source0:        https://github.com/siakhooi/%{name}/archive/refs/tags/${version}.tar.gz
 BuildArch:      noarch
 
@@ -16,19 +16,19 @@ Several commands to print date with predefined formats, from year to nano second
 %install
 %{__mkdir}   -v -p %{buildroot}%{_bindir}
 %{__mkdir}   -v -p %{buildroot}%{_mandir}/man1
-%{__mkdir}   -v -p %{buildroot}/usr/share/licenses/siakhooi-devutils-date-formats
+%{__mkdir}   -v -p %{buildroot}/usr/share/licenses/siakhooi-date-formats
 %{__install} -v -m 0755 %{_topdir}/BUILD/usr/bin/* %{buildroot}%{_bindir}
 %{__install} -v -m 644  %{_topdir}/BUILD/usr/share/man/man1/* %{buildroot}%{_mandir}/man1
-%{__install} -v -m 644  %{_topdir}/BUILD/LICENSE %{buildroot}/usr/share/licenses/siakhooi-devutils-date-formats
+%{__install} -v -m 644  %{_topdir}/BUILD/LICENSE %{buildroot}/usr/share/licenses/siakhooi-date-formats
 
 %post
-ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2y.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2m.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2d.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2h.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2M.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2s.1.gz
-ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2n.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-date-formats.1.gz %{_mandir}/man1/y2y.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-date-formats.1.gz %{_mandir}/man1/y2m.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-date-formats.1.gz %{_mandir}/man1/y2d.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-date-formats.1.gz %{_mandir}/man1/y2h.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-date-formats.1.gz %{_mandir}/man1/y2M.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-date-formats.1.gz %{_mandir}/man1/y2s.1.gz
+ln -s -f %{_mandir}/man1/siakhooi-date-formats.1.gz %{_mandir}/man1/y2n.1.gz
 
 %postun
 %{__rm} -f %{_mandir}/man1/y2y.1.gz
@@ -48,7 +48,7 @@ ln -s -f %{_mandir}/man1/siakhooi-devutils-date-formats.1.gz %{_mandir}/man1/y2n
 %{_bindir}/y2M
 %{_bindir}/y2s
 %{_bindir}/y2n
-%{_mandir}/man1/siakhooi-devutils-date-formats.1.gz
+%{_mandir}/man1/siakhooi-date-formats.1.gz
 
 %changelog
 * Mon Oct 28 2024 Siak Hooi <siakhooi@gmail.com> - 1.1.0

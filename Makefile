@@ -12,7 +12,7 @@ all-deb: clean set-version build-deb
 all-rpm: clean set-version build-rpm
 
 test-man:
-	pandoc src/md/siakhooi-devutils-date-formats.1.md -s -t man | man -l -
+	pandoc src/md/siakhooi-date-formats.1.md -s -t man | man -l -
 
 delete-tags:
 	git tag --delete 1.0.0
@@ -24,22 +24,22 @@ terminalizer:
 rpmsetup:
 	rpmdev-setuptree
 	mkdir -p src/RPMS
-	rpmdev-newspec siakhooi-devutils-date-formats
+	rpmdev-newspec siakhooi-date-formats
 
 rpmlint:
-	cp src/RPMS/siakhooi-devutils-date-formats.spec ~/rpmbuild/SPECS
-	rpmlint ~/rpmbuild/SPECS/siakhooi-devutils-date-formats.spec
+	cp src/RPMS/siakhooi-date-formats.spec ~/rpmbuild/SPECS
+	rpmlint ~/rpmbuild/SPECS/siakhooi-date-formats.spec
 
 rpmbuild:
-	rpmbuild -bb -vv ~/rpmbuild/SPECS/siakhooi-devutils-date-formats.spec
+	rpmbuild -bb -vv ~/rpmbuild/SPECS/siakhooi-date-formats.spec
 
 tree:
 	tree ~/rpmbuild/
-	rpm -ql ~/rpmbuild/RPMS/noarch/siakhooi-devutils-date-formats-1.0.2-1.fc40.noarch.rpm
+	rpm -ql ~/rpmbuild/RPMS/noarch/siakhooi-date-formats-1.0.2-1.fc40.noarch.rpm
 rpm-i:
-	rpm -i -vv ~/rpmbuild/RPMS/noarch/siakhooi-devutils-date-formats-1.0.2-1.fc40.noarch.rpm
+	rpm -i -vv ~/rpmbuild/RPMS/noarch/siakhooi-date-formats-1.0.2-1.fc40.noarch.rpm
 rpm-e:
-	rpm -e -vv siakhooi-devutils-date-formats
+	rpm -e -vv siakhooi-date-formats
 docker-build-rpm:
 	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:rpm44 scripts/build-rpms.sh
 docker-build-deb:
