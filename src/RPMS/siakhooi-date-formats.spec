@@ -1,5 +1,5 @@
 Name:           siakhooi-date-formats
-Version:        1.1.1
+Version:        1.2.0
 Release:        1%{?dist}
 Summary:        Several commands to print date with predefined formats.
 
@@ -51,6 +51,9 @@ ln -s -f %{_mandir}/man1/siakhooi-date-formats.1.gz %{_mandir}/man1/y2n.1.gz
 %{_mandir}/man1/siakhooi-date-formats.1.gz
 
 %changelog
+* Thu May 14 2026 Siak Hooi <siakhooi@gmail.com> - 1.2.0
+- hardening and bug fixes
+
 * Mon Oct 28 2024 Siak Hooi <siakhooi@gmail.com> - 1.1.0
 - refactor to google style
 
