@@ -1,3 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+#
+# Description: Print the current date in YYYY format.
+# Usage: y2y [options]
+#
 
-date "$@" +%Y
+set -euo pipefail
+
+readonly date_format='+%Y'
+
+date "$@" "$date_format"
