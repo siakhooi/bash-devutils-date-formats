@@ -2,7 +2,7 @@ repo: siakhooi/apt
 branch: main
 git_commit_user: date-formats
 git_commit_email: date-formats@siakhooi.github.io
-git_commit_message: "date-formats: Auto deploy"
+git_commit_message: "{repo_name}: {ref_name} | {commit_short}"
 
 files:
   - source: siakhooi-date-formats_*_amd64.deb
